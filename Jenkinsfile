@@ -6,14 +6,14 @@ pipeline {
     ARTIFACT = "pro1"
     CODE_DEPOT = "pro1"
     
-    ARTIFACT_BASE = "${ENTERPRISE}-docker.pkg.coding.net"
+    ARTIFACT_BASE = "${ENTERPRISE}-docker.pkg.coding.testing-1-corp.coding.io"
     ARTIFACT_IMAGE="${ARTIFACT_BASE}/${PROJECT}/${ARTIFACT}/${CODE_DEPOT}"
   }
   stages {
     stage('检出') {
       steps {
         checkout([$class: 'GitSCM', branches: [[name: 'master']],
-                            userRemoteConfigs: [[url:'https://github.com/jenkinsci/java-client-api.git']]])
+                            userRemoteConfigs: [[url:'https://github.com/semnchen/bru1.git']]])
       }
     }
     stage('编译') {
